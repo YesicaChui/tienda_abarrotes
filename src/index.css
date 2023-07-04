@@ -3,16 +3,75 @@
   padding: 0;
 }
 body{
-  background-color: rgb(206, 224, 218);
+  background-color: #FFF2CC;
+}
+
+.header{
+  background-color: #FFD966;
+  display: flex;
+  padding: 0px 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__container {
+  max-width: 1100px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.header__logo {
+  border-radius: 400px;
+ width: 100px;
 
 }
 
-.header_logo{
-  width: 80px;
-  padding: 15px ;
-
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
+.navbar__link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left:  20px;
+  margin-right: 47px;
+}
 
+.cart{
+  display: flex;
+  position: relative;
+}
 
+.cart__img{
+  width: 50px;
+}
+
+.cat__notificacion{
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+  color: white;
+  font-weight: bolder;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -6px;
+  top: -8px;
+}
+
+.main{
+  padding: 25px;
+}
 

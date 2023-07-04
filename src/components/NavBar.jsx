@@ -4,20 +4,19 @@ import { CartWidget } from './CartWidget'
 export const NavBar = () => {
 
   return (
-    <header className='header_principal'>
-      <section className='header_logo'>
-        <img src={logo} alt="logo" className='header_logo' />
+    <header className='header'>
+      <section className='header__container'>
+        <img src={logo} alt="logo" className='header__logo' />
+        
       </section>
-
-      <section className='header_categorias_principal'>
-        <ul className='header_categorias_principal' >
-          <li>Alimentos</li>
-          <li>Bebidas</li>
-          <li>Cofiteria</li>
-          <li>Productos de Limpieza</li>
-        </ul>
-      </section>
+      <nav className='navbar'>
+          <a href="#" className='navbar__link'>Alimentos</a>
+          <a href="#" className='navbar__link'>Bebidas</a>
+          <a href="#" className='navbar__link'>Confiteria</a>
+          <a href="#" className='navbar__link'>Productos de Linpieza</a>
+        </nav>
       <CartWidget />
+
     </header>
   )
 }
