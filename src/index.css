@@ -3,11 +3,11 @@
   padding: 0;
 }
 body{
-  background-color: #FFF2CC;
+  background-color: #F1DBBF;
 }
 
 .header{
-  background-color: #FFD966;
+  background-color: #698269;
   display: flex;
   padding: 0px 30px;
   align-items: center;
@@ -24,8 +24,8 @@ body{
 }
 
 .header__logo {
-  border-radius: 400px;
- width: 100px;
+border-radius: 15px;
+ width: 150px;
 
 }
 
@@ -38,9 +38,9 @@ body{
 
 .navbar__link {
   text-decoration: none;
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
+  color: #F1DBBF;
+  font-size: 20px;
+  font-weight: 900;
   text-transform: uppercase;
   margin-left:  20px;
   margin-right: 47px;
@@ -82,32 +82,59 @@ body{
   padding: 10px 10px;
   width: 100px;
   text-align: center;
-  background-color: #1ebfc1;
+  background-color: #AA5656;
   color: #fff;
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
   margin: 0 auto;
+
+}
+.box-canitdad{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.btnMasMenos{
+  all: unset;
+  width: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: #F1DBBF;
+  background-color: #B99B6B;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .main__cards{
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  gap: 4px;
+  gap: 15px;
+
 }
 
 .detail{
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 }
 
 .img__card{
   width: 200px;
+  border-radius: 5px;
+  margin-top: 5px;
+
 }
 
 .detail__img{
   width: 350px;
+  margin: 12px 0px;
+  border-radius: 10px;
 }
 .card{
   max-width: 230px;

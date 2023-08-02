@@ -5,7 +5,8 @@
     "descripcion": "Presentación 0.8 kg aprox.",
     "precio": 23.99,
     "img": "https://plazavea.vteximg.com.br/arquivos/ids/219360-184-184/20168640.jpg",
-    "category":"alimentos"
+    "category":"alimentos",
+    "stock":10
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "descripcion": "SKU: 968063",
     "precio": 3,
     "img": "https://plazavea.vteximg.com.br/arquivos/ids/312673-1000-1000/agua-mineral-san-mateo-sin-gas-botella-2-5l.jpg",
-    "category":"bebidas"
+    "category":"bebidas",
+    "stock":10
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "descripcion": "SKU: 20208526",
     "precio": 8.4,
     "img": "https://plazavea.vteximg.com.br/arquivos/ids/5872282-1000-1000/20208526.jpg",
-    "category":"confiteria"
+    "category":"confiteria",
+    "stock":10
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "descripcion": "SKU: 948898",
     "precio": 22.9,
     "img": "https://plazavea.vteximg.com.br/arquivos/ids/26358309-1000-1000/948898.jpg",
-    "category":"limpieza"
+    "category":"limpieza",
+    "stock":10
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "descripcion": "Presentación 1.1 kg aprox.",
     "precio": 13.9,
     "img": "https://plazavea.vteximg.com.br/arquivos/ids/518417-1000-1000/20062481.jpg",
-    "category":"alimentos"
+    "category":"alimentos",
+    "stock":10
   },
   {
     "id": 6,
@@ -45,6 +50,7 @@
     "descripcion": "SKU: 20254403",
     "precio": 2.5,
     "img": "https://plazavea.vteximg.com.br/arquivos/ids/24844761-1000-1000/20254403.jpg",
-    "category":"bebidas"
+    "category":"bebidas",
+    "stock":10
   }
 ]
