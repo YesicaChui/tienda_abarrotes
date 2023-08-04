@@ -11,7 +11,7 @@ export const ItemCount = ({ stock, cantidad, setCantidad, agregar }) => {
 
   return (
     <div>
-      <div className='box-canitdad'>
+      <div className='box-cantidad'>
         <button className='btnMasMenos' onClick={disminuir} >-</button>
         <span>{cantidad}</span>
         <button className='btnMasMenos' onClick={aumentar} >+</button>
