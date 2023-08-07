@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ItemCount = ({ stock, cantidad, setCantidad, agregar }) => {
+export const ItemCount = ({ stock, cantidad, setCantidad }) => {
 
   const aumentar = () => {
     cantidad < stock && setCantidad(cantidad + 1)
@@ -16,8 +16,7 @@ export const ItemCount = ({ stock, cantidad, setCantidad, agregar }) => {
         <span>{cantidad}</span>
         <button className='btnMasMenos' onClick={aumentar} >+</button>
       </div>
-      <br />
-      <button className='button' onClick={agregar} >Agregar</button>
+      
     </div>
   )
 }

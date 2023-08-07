@@ -140,3 +140,53 @@ border-radius: 15px;
   max-width: 230px;
   text-align: center;
 }
+
+table{
+  text-align: center;
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+tr{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  align-items: center;
+
+}
+
+.fila__head{
+  border-bottom: 2px #AA5656 solid;
+}
+
+.fila__img{
+  width: 100px;
+  border-radius: 10%;
+}
+
+.fila{
+  border-bottom: 1px solid #AA5656;
+ margin-top: 5px;
+}
+
+.total__car{
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.box-buttons{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+}
+
+.box-buttons button{
+  width: 150px;
+  margin: 0;
+}
+
+.volver{
+  all: unset;
+}

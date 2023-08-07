@@ -1,15 +1,18 @@
 import React from 'react'
 
-export const CartViewItem = ({ producto }) => {
+export const CartViewItem = ({ producto,index, borrarDelCarrito }) => {
 
   return (
-    <div className='card' >
-      <h4>{producto.nombre}</h4>
-      <img src={producto.img} alt={producto.nombre} className='img__card' />
-      <p>{producto.descripcion}</p>
-      <p>S/.{producto.precio}</p>
-      <p>{producto.cantidad}</p>
-    </div>
-
+    <tr className='fila' key={producto.id} >
+    <td>{index + 1}</td>
+    <td> <img src={producto.img} alt={producto.nombre} className='fila__img' /></td>
+    <td>{producto.nombre}</td>
+    <td>{producto.cantidad}</td>
+    <td>S/. {producto.precio}</td>
+    <td>S/. {(producto.cantidad * producto.precio).toFixed(2)}</td>
+    <td>
+      <button onClick={()=>borrarDelCarrito(producto.id)}>🗑️</button>
+    </td>
+  </tr>
   )
 }

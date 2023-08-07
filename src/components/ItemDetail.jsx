@@ -38,7 +38,9 @@ export const ItemDetail = ({producto}) => {
       <img src={producto.img} alt={producto.nombre} className='detail__img'/>
       <p>{producto.descripcion}</p>
       <p>S/.{producto.precio}</p>
-      <ItemCount stock={producto.stock} cantidad={cantidad} setCantidad={setCantidad} agregar={agregar}/>
+      <ItemCount stock={producto.stock} cantidad={cantidad} setCantidad={setCantidad}/>
+      <br />
+      <button className='button' onClick={agregar} >Agregar</button>
       {/* <button className='button'>Agregar</button> */}
     </div>
   )
