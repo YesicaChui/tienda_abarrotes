@@ -190,3 +190,8 @@ tr{
 .volver{
   all: unset;
 }
+
+.btnDelete{
+  cursor: pointer;
+  padding: 5px;
+}

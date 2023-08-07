@@ -4,32 +4,23 @@ import { CartViewItem } from './CartViewItem'
 import { Link } from 'react-router-dom'
 
 export const CartView = () => {
-  const { cart, setCart } = useContext(CartContext)
-  const borrarDelCarrito =(id)=>{
-    setCart(cart.filter(producto=>producto.id!==id))
-  }
-
-  const vaciarCarrito = ()=>{
-    setCart([])
-  }
-
-  const pagar = ()=>{
-    alert("Gracias Por Su Compra") 
+  const { cart, borrarDelCarrito, vaciarCarrito, totalCompra } = useContext(CartContext)
+  const pagar = () => {
+    alert("Gracias Por Su Compra")
     vaciarCarrito()
   }
 
-  if(cart.length===0){
+
+
+  if (cart.length === 0) {
     return (
       <div>
-      <h2> Mi Carrito </h2>
-      <p>Carrito vacio</p>
-      <Link to={"/"} className='volver'>      <button className='button' >Ir a Comprar</button></Link>
-
+        <h2> Mi Carrito </h2>
+        <p>Carrito vacio</p>
+        <Link to={"/"} className='volver'>      <button className='button' >Ir a Comprar</button></Link>
       </div>
     )
   }
-
-
   return (
     <div>
       <h2> Mi Carrito </h2>
@@ -47,7 +38,7 @@ export const CartView = () => {
         </thead>
         <tbody>
           {cart.map((producto, index) => (
-            <CartViewItem producto={producto} index={index} borrarDelCarrito={borrarDelCarrito}/>
+            <CartViewItem producto={producto} index={index} borrarDelCarrito={borrarDelCarrito} />
           ))}
           <tr className='fila' >
             <td></td>
@@ -55,9 +46,8 @@ export const CartView = () => {
             <td></td>
             <td></td>
             <td className='total__car'>TOTAL</td>
-            <td className='total__car'>S/. {cart.reduce((acumulador, producto) => acumulador + producto.precio * producto.cantidad, 0).toFixed(2)}</td>
+            <td className='total__car'>S/. {totalCompra().toFixed(2)}</td>
             <td>
-
             </td>
           </tr>
         </tbody>
