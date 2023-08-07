@@ -18,7 +18,12 @@ export const ItemDetail = ({producto}) => {
       const nuevoProducto = {...producto,cantidad}
       setCart([...cart,nuevoProducto])
     }else{
-      alert("El Producto ya se Encuentra en el carro")
+      const respuesta = confirm(`Hay ${cart[indiceProducto].cantidad} productos de este tipo en el Carrito ¿Desea Agregar ${cantidad} Más?`)
+      if(!respuesta) return
+      const copiaCarrito = [...cart]
+      copiaCarrito[indiceProducto].cantidad+=cantidad
+      setCart(copiaCarrito)
+
     }
     //si lo encuentro preguntar con un alert si desea añadir más
     //si desea añadir actualizar el producto según el id
