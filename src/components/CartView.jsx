@@ -9,9 +9,6 @@ export const CartView = () => {
     alert("Gracias Por Su Compra")
     vaciarCarrito()
   }
-
-
-
   if (cart.length === 0) {
     return (
       <div>
@@ -54,7 +51,7 @@ export const CartView = () => {
       </table>
       <div className='box-buttons'>
         <button onClick={vaciarCarrito} className='button'>Vaciar Carrito</button>
-        <button onClick={pagar} className='button'>Pagar</button>
+        <Link to={"/checkout"}><button  className='button'>Pagar</button></Link>
       </div>
     </div>
 
