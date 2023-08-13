@@ -195,3 +195,19 @@ tr{
   cursor: pointer;
   padding: 5px;
 }
+
+.formulario{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  gap: 5px;
+}
+
+.formulario__input{
+  padding: 10px;
+  border: 1px;
+  border-radius: 10px;
+}
+

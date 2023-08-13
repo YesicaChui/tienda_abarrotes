@@ -6,7 +6,9 @@ import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 export const NavBar = () => {
   const { cart } = useContext(CartContext)
-
+  const handleCartClick = () => {
+      alert("No hay productos en el carrito");
+  };
   return (
     <header className='header'>
       <section className='header__container'>
@@ -18,10 +20,17 @@ export const NavBar = () => {
         <Link to="/category/confiteria" className='navbar__link'>Confiteria</Link>
         <Link to="/category/limpieza" className='navbar__link'>Productos de Limpieza</Link>
       </nav>
-      <Link to={"/cart"}>
-        {cart.length !== 0 && <CartWidget />}
-      </Link>
-
+      {cart.length !== 0
+        ? (
+          <Link to={"/cart"}>
+            <CartWidget />
+          </Link>
+        )
+        : (
+          <div onClick={handleCartClick}>
+            <CartWidget />
+          </div>
+        )}
     </header>
   )
 }

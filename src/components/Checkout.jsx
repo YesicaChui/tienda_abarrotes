@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
+import { createOrder } from '../helpers/services'
 
 export const Checkout = () => {
   const [values, setValues] = useState({
     nombre: "",
     direccion: "",
-    email: ""
+    email: "",
+    confirmarEmail: ""
   })
   const [orderId, setOrderId] = useState(null)
 
@@ -18,16 +20,57 @@ export const Checkout = () => {
       [e.target.name]: e.target.value
     })
   }
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
+    const validationErrors = validateForm(values);
+    if (validationErrors != "") {
+      alert(validationErrors)
+      return;
+    }
     const orden = {
-      cliente: values,
+      cliente: {
+        nombre: values.nombre,
+        direccion: values.direccion,
+        email: values.email,
+      },
       items: cart,
       total: totalCompra(),
       fecha: new Date()
     }
-    console.log(orden)
+
+    createOrder(orden)
+      .then(res => {
+        vaciarCarrito()
+        setOrderId(res)
+      })
+      .catch(e => alert(e))
   }
+
+  const validateForm = (values) => {
+    let error = ""
+    if (!values.nombre.trim()) {
+      error = "El nombre es requerido"
+    }
+    else if (!values.direccion.trim()) {
+      error = "La dirección es requerida"
+    }
+    else if (!values.email.trim()) {
+      error = "El correo electrónico es requerido"
+    }
+    else if (!isValidEmail(values.email)) {
+      error = "Ingresa un correo electrónico válido"
+    }
+    else if (values.email !== values.confirmarEmail) {
+      error = "Los correos electrónicos no coinciden"
+    }
+
+    return error;
+  };
+
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  };
+
   if (orderId) {
     return (
       <div>
@@ -43,9 +86,9 @@ export const Checkout = () => {
     <div>
       <h2>Checkout</h2>
       <hr />
-      <form onSubmit={handleSubmit} className='d-flex flex-column  align-items-center gap-1' action="">
+      <form onSubmit={handleSubmit} className='formulario' action="">
         <input
-          className='w-25'
+          className='formulario__input'
           type="text"
           placeholder='Nombre'
           value={values.nombre}
@@ -53,7 +96,7 @@ export const Checkout = () => {
           name='nombre'
         />
         <input
-          className='w-25'
+          className='formulario__input'
           type="text"
           placeholder='Direccion'
           value={values.direccion}
@@ -61,14 +104,22 @@ export const Checkout = () => {
           name='direccion'
         />
         <input
-          className='w-25'
+          className='formulario__input'
           type="text"
           placeholder='Tu email'
           value={values.email}
           onChange={handleInputChange}
           name='email'
         />
-        <button className='btn btn-primary w-25'>Enviar</button>
+        <input
+          className='formulario__input'
+          type="text"
+          placeholder='Repite tu email'
+          value={values.confirmarEmail}
+          onChange={handleInputChange}
+          name='confirmarEmail'
+        />
+        <button className='button'>Enviar</button>
       </form>
     </div>
   )

@@ -7,7 +7,6 @@ export const CartViewItem = ({ producto,index, borrarDelCarrito }) => {
   const {updateCart} = useContext(CartContext)
 
   const setCantidad = (cantidad)=>{
-    console.log(cantidad)
     updateCart(producto.id, cantidad)
   }
 

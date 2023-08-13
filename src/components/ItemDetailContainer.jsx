@@ -1,15 +1,14 @@
 import React from 'react'
-import { useProductos } from '../hooks/useProductos'
 import { useParams } from 'react-router-dom'
 import { ItemDetail } from './ItemDetail'
+import { useProductos } from '../hooks/useProductos'
 
 export const ItemDetailContainer = () => {
   const {id} =useParams()
-  console.log(`mi id es ${id}`)
-  const {productos} =useProductos({idDetail:id})
+  const {productos} =useProductos({id,type:"getOne"})
   return (
     <main className="main"> 
-      {productos.length===0? <h2>CARGANDO......</h2>:<ItemDetail producto={productos} />}
+      {!productos? <h2>CARGANDO......</h2>:<ItemDetail producto={productos} />}
     </main>
 
   )

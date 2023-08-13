@@ -32,11 +32,9 @@ export const CartProvider = ({ children }) => {
   }
 
   const updateCart=(id,cantidad)=>{
-    console.log(id,cantidad)
     const indiceProducto = cart.findIndex((prod) => prod.id === id)
     const copiaCarrito = [...cart]
     copiaCarrito[indiceProducto].cantidad = cantidad
-    console.log( "yes",copiaCarrito[indiceProducto].cantidad)
     setCart(copiaCarrito)
   }
 

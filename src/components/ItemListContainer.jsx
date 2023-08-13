@@ -5,8 +5,8 @@ import { ItemList } from "./ItemList"
 
 export const ItemListContainer = () => {
   const {id} = useParams()
-  console.log(id)
-  const {productos} = useProductos({id})
+
+  const {productos} = useProductos({id,type:"getAll"})
   return (
     <main className="main"> 
       <ItemList productos={productos}/>
