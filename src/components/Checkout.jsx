@@ -4,6 +4,7 @@ import { CartContext } from '../context/CartContext'
 import { createOrder } from '../helpers/services'
 
 export const Checkout = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [values, setValues] = useState({
     nombre: "",
     direccion: "",
@@ -27,6 +28,7 @@ export const Checkout = () => {
       alert(validationErrors)
       return;
     }
+    setIsSubmitting(true);
     const orden = {
       cliente: {
         nombre: values.nombre,
@@ -44,6 +46,9 @@ export const Checkout = () => {
         setOrderId(res)
       })
       .catch(e => alert(e))
+      .finally(()=>{
+        setIsSubmitting(false);
+      })
   }
 
   const validateForm = (values) => {
@@ -119,7 +124,7 @@ export const Checkout = () => {
           onChange={handleInputChange}
           name='confirmarEmail'
         />
-        <button className='button'>Enviar</button>
+        <button className='button' disabled={isSubmitting}>Enviar</button>
       </form>
     </div>
   )
