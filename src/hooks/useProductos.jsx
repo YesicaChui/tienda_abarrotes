@@ -9,7 +9,7 @@ export const useProductos = ({id,idDetail}) => {
         console.log(res)
         console.log(idDetail)
         if(idDetail){
-          setProductos(res.find(prod=>prod.id===Number(idDetail)))
+          setProductos(res.find(prod=>prod.id+''===idDetail))
         }else{
           id?setProductos(res.filter(prod=>prod.category===id)):setProductos(res)
         }
