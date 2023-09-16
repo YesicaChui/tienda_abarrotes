@@ -65,6 +65,46 @@ border-radius: 15px;
   margin-right: 47px;
 }
 
+/* Estilo para el menú icon (icono hamburguesa) */
+.menu-icon {
+  display: none; /* Oculta el icono en pantallas grandes */
+  cursor: pointer;
+}
+
+/* Estilo para el menú desplegado en pantallas pequeñas */
+.navbar.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 110px; /* Ajusta la posición según tu diseño */
+  left: 0;
+  width: 100%;
+  background-color: #698269;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Estilo para las barras del icono hamburguesa */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+/* Media query para mostrar el icono hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  /* Oculta los enlaces de navegación en pantallas pequeñas */
+  .navbar {
+    display: none;
+  }
+}
+
+
 .cart{
   display: flex;
   position: relative;
@@ -133,10 +173,20 @@ border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 15px;
+  @media (max-width:900px){    
+    grid-template-columns:  repeat(3,1fr);
+    
+  }
+  @media (max-width:700px){    
+    grid-template-columns:  repeat(2,1fr);
+    
+  }
   @media (max-width:480px){    
     grid-template-columns:  repeat(1,1fr);
     
   }
+
+
 }
 
 .detail{
