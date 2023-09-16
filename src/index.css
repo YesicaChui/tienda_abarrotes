@@ -1,9 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
-box-sizing: border-box;
+  box-sizing: border-box;
 }
-body{
+
+body {
   background-color: #F1DBBF;
   display: flex;
   flex-direction: column;
@@ -11,7 +12,8 @@ body{
   position: relative;
   min-height: 100vh;
   padding-bottom: 100px;
-  @media (max-width:480px){
+
+  @media (max-width:480px) {
     padding-bottom: 150px;
   }
 
@@ -28,7 +30,7 @@ footer {
   text-align: center;
 }
 
-.header{
+.header {
   background-color: #698269;
   display: flex;
   padding: 0px 30px;
@@ -42,12 +44,12 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
 }
 
 .header__logo {
-border-radius: 15px;
- width: 150px;
+  border-radius: 15px;
+  width: 150px;
 
 }
 
@@ -64,13 +66,14 @@ border-radius: 15px;
   font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
-  margin-left:  20px;
+  margin-left: 20px;
   margin-right: 47px;
 }
 
 /* Estilo para el menú icon (icono hamburguesa) */
 .menu-icon {
-  display: none; /* Oculta el icono en pantallas grandes */
+  display: none;
+  /* Oculta el icono en pantallas grandes */
   cursor: pointer;
 }
 
@@ -79,7 +82,8 @@ border-radius: 15px;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 110px; /* Ajusta la posición según tu diseño */
+  top: 110px;
+  /* Ajusta la posición según tu diseño */
   left: 0;
   width: 100%;
   background-color: #698269;
@@ -108,16 +112,16 @@ border-radius: 15px;
 }
 
 
-.cart{
+.cart {
   display: flex;
   position: relative;
 }
 
-.cart__img{
+.cart__img {
   width: 50px;
 }
 
-.cat__notificacion{
+.cat__notificacion {
   background-color: red;
   border-radius: 50%;
   padding: 10px;
@@ -133,12 +137,12 @@ border-radius: 15px;
   top: -8px;
 }
 
-.main{
+.main {
   padding: 25px;
-  
+
 }
 
-.button{
+.button {
   all: unset;
   display: block;
   padding: 10px 10px;
@@ -152,7 +156,8 @@ border-radius: 15px;
   margin: 0 auto;
 
 }
-.box-cantidad{
+
+.box-cantidad {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -160,7 +165,7 @@ border-radius: 15px;
   font-size: 20px;
 }
 
-.btnMasMenos{
+.btnMasMenos {
   all: unset;
   width: 40px;
   font-family: Arial, Helvetica, sans-serif;
@@ -172,85 +177,113 @@ border-radius: 15px;
   cursor: pointer;
 }
 
-.main__cards{
+.main__cards {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  @media (max-width:900px){    
-    grid-template-columns:  repeat(3,1fr);
-    
+
+  @media (max-width:900px) {
+    grid-template-columns: repeat(3, 1fr);
+
   }
-  @media (max-width:700px){    
-    grid-template-columns:  repeat(2,1fr);
-    
+
+  @media (max-width:700px) {
+    grid-template-columns: repeat(2, 1fr);
+
   }
-  @media (max-width:480px){    
-    grid-template-columns:  repeat(1,1fr);
-    
+
+  @media (max-width:480px) {
+    grid-template-columns: repeat(1, 1fr);
+
   }
 
 
 }
 
-.detail{
+.detail {
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+
 }
 
-.img__card{
+.img__card {
   width: 200px;
   border-radius: 5px;
   margin-top: 5px;
 
 }
 
-.detail__img{
+.detail__img {
   width: 350px;
   margin: 12px 0px;
   border-radius: 10px;
 }
-.card{
+
+.card {
   max-width: 230px;
   text-align: center;
   margin: 0 auto;
 }
 
-table{
+table {
   text-align: center;
   margin: 0 auto;
   border-collapse: collapse;
   width: 80%;
 }
 
-tr{
+tr {
   display: grid;
-  grid-template-columns: repeat(8,1fr);
+  grid-template-columns: repeat(8, 1fr);
   align-items: center;
 
 }
 
-.fila__head{
+.fila__head {
   border-bottom: 2px #AA5656 solid;
+
+  @media (max-width:600px) {
+    display: none;
+  }
 }
 
-.fila__img{
+.fila__img {
   width: 100px;
   border-radius: 10%;
+
+  @media (max-width:600px) {
+    width: 250px;
+  }
 }
 
-.fila{
+.fila {
   border-bottom: 1px solid #AA5656;
- margin-top: 5px;
+  margin-top: 5px;
+
+  @media (max-width:600px) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
 }
 
-.total__car{
+.fila td:first-child {
+  @media (max-width:600px) {
+    display: none;
+  }
+
+  /* Ocultar el primer td en dispositivos móviles */
+}
+
+
+.total__car {
   font-weight: bolder;
   font-size: 20px;
 }
 
-.box-buttons{
+.box-buttons {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -258,21 +291,24 @@ tr{
 
 }
 
-.box-buttons button{
+.box-buttons button {
   width: 150px;
   margin: 0;
 }
 
-.volver{
+.volver {
   all: unset;
 }
 
-.btnDelete{
+.btnDelete {
   cursor: pointer;
   padding: 5px;
+  @media (max-width:600px) {
+    font-size: 30px;
+  }
 }
 
-.formulario{
+.formulario {
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -281,14 +317,13 @@ tr{
   gap: 5px;
 }
 
-.formulario__input{
+.formulario__input {
   padding: 10px;
   border: 1px;
   border-radius: 10px;
 }
 
-.btnCarrito{
+.btnCarrito {
   margin: 5px;
   background-color: #B99B6B;
 }
-
