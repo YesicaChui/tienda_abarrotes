@@ -5,6 +5,7 @@ import { NavBar } from "./components/NavBar"
 import { CartProvider } from "./context/CartContext"
 import { CartView } from "./components/CartView"
 import { Checkout } from "./components/Checkout"
+import { Footer } from "./components/Footer"
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<Navigate to={"/"} />} />
         </Routes>
-
+        <Footer/>
       </BrowserRouter>
     </CartProvider>
 
